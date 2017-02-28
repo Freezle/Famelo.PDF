@@ -16,6 +16,6 @@ namespace Famelo\PDF\Error;
  *
  * @api
  */
-class UnknownGeneratorOptionException extends \TYPO3\Flow\Error\Exception {
+class UnknownGeneratorOptionException extends \Neos\Flow\Error\Exception {
 
 }

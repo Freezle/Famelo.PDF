@@ -11,7 +11,7 @@ namespace Famelo\PDF\View;
  * The TYPO3 project - inspiring people to share!                         *
  *                                                                        */
 
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Flow\Annotations as Flow;
 
 /**
  * A standalone template view.
@@ -20,7 +20,7 @@ use TYPO3\Flow\Annotations as Flow;
  *
  * @api
  */
-class StandaloneView extends \TYPO3\Fluid\View\StandaloneView {
+class StandaloneView extends \Neos\FluidAdaptor\View\StandaloneView {
 	public function initializeObject() {
 		parent::initializeObject();
 

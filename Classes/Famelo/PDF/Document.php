@@ -12,12 +12,13 @@ namespace Famelo\PDF;
  *                                                                        */
 
 use Famelo\PDF\Generator\PdfGeneratorInterface;
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Flow\Annotations as Flow;
 
 /**
  * @Flow\Scope("prototype")
  */
 class Document {
+
 	/*
 	 * @var string
 	 */
@@ -63,14 +64,14 @@ class Document {
 
 	/**
 	 *
-	 * @Flow\Inject(setting="DefaultGenerator", package="Famelo.PDF")
+	 * @Flow\InjectConfiguration(path="DefaultGenerator", package="Famelo.PDF")
 	 * @var string
 	 */
 	protected $defaultGenerator;
 
 	/**
 	 *
-	 * @Flow\Inject(setting="DefaultGeneratorOptions", package="Famelo.PDF")
+	 * @Flow\InjectConfiguration(path="DefaultGeneratorOptions", package="Famelo.PDF")
 	 * @var array
 	 */
 	protected $defaultGeneratorOptions;
