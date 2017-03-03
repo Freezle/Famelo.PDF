@@ -1,6 +1,7 @@
 {
     "name": "famelo/pdf",
     "type": "neos-flow-package",
+	"version": "4.0.0",
     "description": "Provides a quick and simple way to generate a PDF from a Fluid Template through the MPDF library",
     "require": {
         "neos/flow": "*",
