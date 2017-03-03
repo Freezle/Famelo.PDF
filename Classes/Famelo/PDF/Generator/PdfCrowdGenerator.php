@@ -12,7 +12,7 @@ namespace Famelo\PDF\Generator;
  *                                                                        */
 
 use Neos\Flow\Annotations as Flow;
-require_once('../../../../Resources/Private/PHP/pdfcrowd/pdfcrowd.php');
+require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))).'/Resources/Private/PHP/pdfcrowd/pdfcrowd.php');
 
 /**
  * @Flow\Scope("prototype")
