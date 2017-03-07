@@ -47,7 +47,7 @@ class Document {
 	/**
 	 * The view
 	 *
-	 * @var \Famelo\PDF\View\StandaloneView
+	 * @var \Neos\FluidAdaptor\View\StandaloneView
 	 * @Flow\Inject
 	 */
 	protected $view;
@@ -173,7 +173,7 @@ class Document {
 	public function send($filename = NULL) {
 		$content = $this->render();
 		$generator = $this->getGenerator();
-		$this->setOptionsByViewHelper($generator);
+		//$this->setOptionsByViewHelper($generator);
 		$generator->setFormat($this->format);
 		$generator->sendPdf($content, $filename);
 		exit();
@@ -182,7 +182,7 @@ class Document {
 	public function download($filename = NULL) {
 		$content = $this->render();
 		$generator = $this->getGenerator();
-		$this->setOptionsByViewHelper($generator);
+		//$this->setOptionsByViewHelper($generator);
 		$generator->setFormat($this->format);
 		$generator->downloadPdf($content, $filename);
 		exit();
@@ -191,7 +191,7 @@ class Document {
 	public function save($filename) {
 		$content = $this->render();
 		$generator = $this->getGenerator();
-		$this->setOptionsByViewHelper($generator);
+		//$this->setOptionsByViewHelper($generator);
 		$generator->setFormat($this->format);
 		$generator->savePdf($content, $filename);
 	}
