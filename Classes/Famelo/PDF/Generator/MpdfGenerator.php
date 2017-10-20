@@ -82,7 +82,7 @@ class MpdfGenerator implements PdfGeneratorInterface {
 	}
 
 	public function getMpdfInstance() {
-		$mpdf = new \mPDF(
+		$mpdf = new \Mpdf\Mpdf(
 			$this->options['encoding'],
 			$this->options['format'],
 			$this->options['font-size'],
