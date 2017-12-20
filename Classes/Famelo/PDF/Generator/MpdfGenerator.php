@@ -34,7 +34,7 @@ class MpdfGenerator implements PdfGeneratorInterface {
 	protected $footer;
 
 	/**
-	 * @var string
+	 * @var array
 	 */
 	protected $options = array(
 		'encoding' => '',
@@ -82,6 +82,27 @@ class MpdfGenerator implements PdfGeneratorInterface {
 	}
 
 	public function getMpdfInstance() {
+        $defaultConfig = (new \Mpdf\Config\ConfigVariables())->getDefaults();
+        $fontDirs = $defaultConfig['fontDir'];
+
+        $defaultFontConfig = (new \Mpdf\Config\FontVariables())->getDefaults();
+        $fontData = $defaultFontConfig['fontdata'];
+
+        $fontDirs = array_merge($fontDirs, [
+            FLOW_PATH_PACKAGES. 'FlowPackage/Famelo.PDF/Resources/Private/Fonts',
+        ]);
+        $fontData = $fontData + [
+                'calibri' => [
+                    'R' => 'calibri.ttf',
+                    'I' => 'calibrii.ttf',
+                    'B' => 'calibrib.ttf',
+                    'BI' => 'calibriz.ttf'
+                ]
+            ];
+
+        $this->options['fontDir'] = $fontDirs;
+        $this->options['fontdata'] = $fontData;
+
 		$mpdf = new \Mpdf\Mpdf($this->options);
 
 		if ($this->footer !== NULL) {
