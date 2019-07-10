@@ -42,12 +42,12 @@ class MpdfGenerator implements PdfGeneratorInterface {
 		'orientation' => 'P',
 		'font-size' => 0,
 		'font' => '',
-		'margin-left' => 15,
-		'margin-right' => 15,
-		'margin-top' => 16,
-		'margin-bottom' => 16,
-		'margin-header' => 9,
-		'margin-footer' => 9,
+		'margin_left' => 15,
+		'margin_right' => 15,
+		'margin_top' => 16,
+		'margin_bottom' => 16,
+		'margin_header' => 9,
+		'margin_footer' => 9,
 	);
 
 	public function setFormat($format) {
@@ -64,12 +64,12 @@ class MpdfGenerator implements PdfGeneratorInterface {
 
 	public function setOption($name, $value) {
 		$backwardsCompatabilityOptionNames = array(
-			'marginLeft' => 'margin-left',
-			'marginRight' => 'margin-right',
-			'marginTop' => 'margin-top',
-			'marginBottom' => 'margin-bottom',
-			'marginHeader' => 'margin-header',
-			'marginFooter' => 'margin-footer',
+			'marginLeft' => 'margin_left',
+			'marginRight' => 'margin_right',
+			'marginTop' => 'margin_top',
+			'marginBottom' => 'margin_bottom',
+			'marginHeader' => 'margin_header',
+			'marginFooter' => 'margin_footer',
 			'fontSize' => 'font-size'
 		);
 		if (isset($backwardsCompatabilityOptionNames[$name])) {
