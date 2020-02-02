@@ -13,6 +13,7 @@ namespace Famelo\PDF\Generator;
 
 use Famelo\PDF\View\StandaloneView;
 use Neos\Flow\Annotations as Flow;
+use setasign\Fpdi\Fpdi;
 
 /**
  * @Flow\Scope("prototype")
@@ -76,10 +77,10 @@ class FpdiGenerator implements PdfGeneratorInterface {
 			$texts = $container->get('Famelo\Pdf\ViewHelpers\Fpdi\TextViewHelper', 'texts');
 		}
 
-		$fpdi = new \fpdi\FPDI();
+		$fpdi = new Fpdi();
 		$fpdi->AddPage();
 		$fpdi->setSourceFile($template);
-		$fpdi->useTemplate($fpdi->importPage(1), 0, 0, 0);
+		$fpdi->useTemplate($fpdi->importPage(1));
 
 		foreach ($texts as $text) {
 			foreach ($defaults as $key => $value) {
